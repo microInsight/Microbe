@@ -1,0 +1,78 @@
+﻿@model Microbe.Models.ReportModels.ProjectReportParameters
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProjectReportParameters</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientProjectReportsID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientProjectReportsID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialLabel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpecialLabel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumRange)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinimumRange)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximumRange)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaximumRange)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GraphsPerPage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GraphsPerPage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFilter)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataFilter)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialNote)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpecialNote)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.createDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.createDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.modifiedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.modifiedDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

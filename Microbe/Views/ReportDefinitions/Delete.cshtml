@@ -1,0 +1,57 @@
+﻿@model Microbe.Models.ReportModels.ReportDefinitions
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Report Definition</h2>
+
+<h3>Are you sure you want to delete this definition?</h3>
+<div>
+    <h4>ReportDefinitions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReportType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DefinitionDesc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DefinitionDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportFunction)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReportFunction)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.createDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.createDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.modifiedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.modifiedDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ReportDefinitionID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,64 @@
+﻿@model Microbe.Models.ReportSections.ReportSections
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>ReportSections</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ReportSectionID" />
+            <div class="form-group">
+                <label asp-for="ReportDefinitionID" class="control-label"></label>
+                <input asp-for="ReportDefinitionID" class="form-control" />
+                <span asp-validation-for="ReportDefinitionID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SectionOrder" class="control-label"></label>
+                <input asp-for="SectionOrder" class="form-control" />
+                <span asp-validation-for="SectionOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SectionTitle" class="control-label"></label>
+                <input asp-for="SectionTitle" class="form-control" />
+                <span asp-validation-for="SectionTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SectionDesc" class="control-label"></label>
+                <input asp-for="SectionDesc" class="form-control" />
+                <span asp-validation-for="SectionDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifiedBy" class="control-label"></label>
+                <input asp-for="ModifiedBy" class="form-control" />
+                <span asp-validation-for="ModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createDate" class="control-label"></label>
+                <input asp-for="createDate" class="form-control" />
+                <span asp-validation-for="createDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="modifiedDate" class="control-label"></label>
+                <input asp-for="modifiedDate" class="form-control" />
+                <span asp-validation-for="modifiedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

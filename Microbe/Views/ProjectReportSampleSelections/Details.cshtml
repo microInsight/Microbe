@@ -1,0 +1,60 @@
+﻿@model Microbe.Models.ProjectInformationModels.ProjectReportSampleSelection
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProjectReportSampleSelection</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientProjectReportsID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientProjectReportsID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.isSelected)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.isSelected)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PointColor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PointColor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.trendLine)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.trendLine)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.createDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.createDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.modifiedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.modifiedDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

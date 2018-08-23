@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Microbe.Models.ReportModels.ReportDefinitions>
+
+@{
+    ViewData["Title"] = "Defined Reports";
+}
+
+<h2>Defined Reports</h2>
+
+<p>
+    <a asp-action="Create">Create New Defined Report</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReportType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefinitionDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReportFunction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modifiedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="ReportSections" asp-action="Index" asp-route-id="@item.ReportDefinitionID">@Html.DisplayFor(modelItem => item.ReportType)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DefinitionDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReportFunction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.createDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.modifiedDate)
+                </td>
+                <TD>
+                    <nbsp>
+                        <a asp-action="Edit" asp-route-id="@item.ReportDefinitionID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ReportDefinitionID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ReportDefinitionID">Delete</a>
+                    </nbsp>|
+
+                </TD>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-action="Create">Create New Defined Report</a>
+</p>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/ReportPrint.css">
+</head>
+<body>
+    <div class="copyright">NOTICE: This report is intended only for the addressee shown above and may contain conﬁdential or privileged information. If the recipient of this material is not the intended recipient or if you have received this in error, please notify Microbial Insights, Inc. immediately. The data and other information in this report represent only the sample(s) analyzed and are rendered upon condition that it is not to be reproduced without approval from Microbial Insights, Inc. Thank you for your cooperation.</div>
+    <div id="footer">
+        <table class="full">
+            <tr>
+                <td></td>
+                <td>10515 Research Drive<br />Knoxville, TN 37922<br />Phone: 865.573.8188<br />Fax: 865.573.8133<br />Web: www.microbe.com</td>
+            </tr>
+        </table>
+    </div>
+    <div id="header"><table class="full"><tr><td width="30%"><img src="images/MI logo.jpg" height="100"></td><td>10515 Research Drive<br />Knoxville, TN 37922<br />Phone: 865.573.8188<br />Fax: 865.573.8133<br />Web: www.microbe.com</td></tr></table><hr /></div>
+
+    <!--**************************************************************************************************************************************************************************************
+    Test code generated using sproc MicrobialInsights.dbo.usp_GenerateQuantArray ProjectID
+
+    **************************************************************************************************************************************************************************************-->
+
+
+    <!--**************************************************************************************************************************************************************************************
+    End of Test code generated using sproc MicrobialInsights.dbo.usp_GenerateQuantArray ProjectID
+
+    **************************************************************************************************************************************************************************************-->
+
+    <h3>Interpretation</h3>
+    <h4>Diversity Indices</h4>
+    <div>
+        The Shannon diversity index is a quantitative measurement that characterizes how many different genera are present in the sample and takes into account the distribution of the number of organisms classiﬁed to each genus present in the sample (commonly referred to as species eveness) [1, 2]. Shannon’s diversity index increases in value as the number of genera increases and as the number of organisms present per genera becomes even. Simpson’s index measures the probability that two individuals selected randomly from the sample would belong to different genera: the greater the value, the greater the sample diversity. The Chao1 index is an excellent indicator of species richness and is based on the number of reads when one (singleton) or two (doubleton) operational taxonomic units (OTUs) are observed. This value is the predicted number of genera based on the number of singletons and doubletons. The total genera observed is presented here, but does not include reads unclassiﬁed at genus species.
+    </div>
+    <H4>Principal Coordinate Analysis</H4>
+    <div>
+        Principal Coordinate Analysis (PCoA) is an excellent tool for visualizing differences in microbial communities between samples [3]. Unlike more traditional methods such as principal component analysis (PCA), PCoA calculates complex functions for the axes rather than dimensional scaling used in PCA. Therefore, PCoA is able to better demonstrate dissimilarities that may be nuanced in PCA tests. PCoA accomplishes this by using a dissimilarity matrix to assign each sample a location in dimensional space, then changes the coordinate system to display the data in two dimensions.
+    </div>
+    <h4>Hierarchical Clustering Dendrogram</h4>
+    <div>
+        Hierarchical clustering is accomplished by comparing dissimilarities between the samples using complete agglomeration of the Bray-Curtis dissimilarity. This groups samples which are the least dissimilar together. The length of the branches indicate the amount of dissimilarity between samples. Therefore, shorter branches are more similar. The stacked bar chart below each leaf of the tree represents the relative abundance of genus-level classiﬁcations.
+    </div>
+    <H3>References</H3>
+    <div>1. Gotelli, N. J. & Colwell, R. K. Quantifying biodiversity: procedures and pitfalls in the measurement and comparison of species richness. <i>Ecology letters</i> <b>4</b>, 379–391 (2001). </div>
+    <div>2. Hill, M. O. Diversity and evenness: a unifying notation and its consequences. <i>Ecology</i> <b>54</b>, 427–432 (1973). </div>
+    <div>3. Buttigieg, P. L. & Ramette, A. A guide to statistical analysis in microbial ecology: a community-focused, living review of multivariate data analyses. <i>FEMS Microbiology Ecology</i> <b>90</b>, 543–550. ISSN: 1574-6941 (2014).</div>
+    content: counter(page);
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿@model Microbe.Models.ReportModels.ReportDefinitions
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReportDefinitions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReportType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DefinitionDesc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DefinitionDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportFunction)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReportFunction)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.createDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.createDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.modifiedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.modifiedDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ReportDefinitionID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

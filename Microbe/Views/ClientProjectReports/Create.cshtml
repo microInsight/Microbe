@@ -1,0 +1,48 @@
+﻿@model Microbe.Models.ProjectInformationModels.ClientProjectReports
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>ClientProjectReports</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClientProjectsID" class="control-label"></label>
+                <input asp-for="ClientProjectsID" class="form-control" />
+                <span asp-validation-for="ClientProjectsID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportParametersID" class="control-label"></label>
+                <input asp-for="ReportParametersID" class="form-control" />
+                <span asp-validation-for="ReportParametersID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportDefinitionsID" class="control-label"></label>
+                <input asp-for="ReportDefinitionsID" class="form-control" />
+                <span asp-validation-for="ReportDefinitionsID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="datafile" class="control-label"></label>
+                <input asp-for="datafile" class="form-control" />
+                <span asp-validation-for="datafile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

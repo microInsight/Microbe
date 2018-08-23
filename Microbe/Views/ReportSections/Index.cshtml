@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Microbe.Models.ReportSections.ReportSections>
+
+@{
+    ViewData["Title"] = "Report Sections";
+}
+
+<h2>Report Sections</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <!--<th>        @Html.DisplayNameFor(model => model.ReportDefinitionID)    </th>-->
+            <th>
+                @Html.DisplayNameFor(model => model.SectionOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionDesc)
+            </th>
+            <th colspan="30"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <!--<td>
+        @Html.DisplayFor(modelItem => item.ReportDefinitionID)
+    </td>-->
+            <td>
+                @Html.DisplayFor(modelItem => item.SectionOrder)
+            </td>
+            <td>
+                <a asp-controller="ReportSectionFigures" asp-action="Index" asp-route-id="@item.ReportSectionID">@Html.DisplayFor(modelItem => item.SectionTitle)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SectionDesc)
+            </td>
+            
+            <td>
+                <nbsp><a asp-action="Edit" asp-route-id="@item.ReportSectionID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ReportSectionID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ReportSectionID">Delete</a></nbsp>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+<p>
+    <a asp-action="Create">Create New Report Section</a>
+</p>

@@ -1,0 +1,78 @@
+﻿@model Microbe.Models.ReportModels.ProjectReportParameters
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>ProjectReportParameters</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClientProjectReportsID" class="control-label"></label>
+                <input asp-for="ClientProjectReportsID" class="form-control" />
+                <span asp-validation-for="ClientProjectReportsID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialLabel" class="control-label"></label>
+                <input asp-for="SpecialLabel" class="form-control" />
+                <span asp-validation-for="SpecialLabel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinimumRange" class="control-label"></label>
+                <input asp-for="MinimumRange" class="form-control" />
+                <span asp-validation-for="MinimumRange" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaximumRange" class="control-label"></label>
+                <input asp-for="MaximumRange" class="form-control" />
+                <span asp-validation-for="MaximumRange" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GraphsPerPage" class="control-label"></label>
+                <input asp-for="GraphsPerPage" class="form-control" />
+                <span asp-validation-for="GraphsPerPage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataFilter" class="control-label"></label>
+                <input asp-for="DataFilter" class="form-control" />
+                <span asp-validation-for="DataFilter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialNote" class="control-label"></label>
+                <input asp-for="SpecialNote" class="form-control" />
+                <span asp-validation-for="SpecialNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifiedBy" class="control-label"></label>
+                <input asp-for="ModifiedBy" class="form-control" />
+                <span asp-validation-for="ModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createDate" class="control-label"></label>
+                <input asp-for="createDate" class="form-control" />
+                <span asp-validation-for="createDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="modifiedDate" class="control-label"></label>
+                <input asp-for="modifiedDate" class="form-control" />
+                <span asp-validation-for="modifiedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

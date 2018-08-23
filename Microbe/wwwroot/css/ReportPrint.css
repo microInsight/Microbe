@@ -1,0 +1,139 @@
+﻿h4 {
+    color: #41b6e6;
+}
+
+h3 {
+    padding-top: 8em;
+    page-break-before: always;
+    color: #af272f;
+}
+
+h1 {
+    padding-top: 12em;
+    color: #002554;
+}
+
+@media screen {
+    #footer {
+        display: none;
+    }
+
+    div.copyright {
+        display: none;
+    }
+}
+
+
+
+
+body {
+    font: 11pt Times, serif;
+    line-height: 1.1;
+}
+
+@media print {
+    @page {
+        margin: 0;
+        margin-left: 1.27cm;
+        margin-right: 1.27cm;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    @page :first {
+        display: block;
+        border: 1px;
+        border-top: 2px solid #ccc;
+    }
+
+    div {
+        text-align: justify;
+    }
+
+    #header {
+        display: table-header-group;
+        top: 0;
+        font-size: medium;
+        text-align: right;
+        position: fixed;
+    }
+
+    #footer {
+        display: block;
+        bottom: 0;
+        font-size: small;
+        text-align: right;
+        position: fixed;
+    }
+
+    div.copyright {
+        display: none;
+        bottom: 0;
+        font-size: small;
+    }
+}
+
+
+.RedBackLabel {
+    background-color: #af272f;
+    color: white;
+    vertical-align:central;
+    text-align: center;
+}
+
+.RedBackLabelBottom {
+    background-color: #af272f;
+    color: white;
+    vertical-align: text-bottom;
+    text-align: center;
+}
+
+.RedBackData {
+    background-color: #af272f;
+    color: white;
+    vertical-align: top;
+    text-align: left;
+}
+
+.FirstLabel {
+    vertical-align: top;
+    text-align: right;
+    color: #41b6e6;
+    text-wrap:avoid;
+    width: 10%;
+}
+
+.SecondLabel {
+    vertical-align: top;
+    text-align: right;
+    color: #41b6e6;
+}
+
+td.FirstColumn, .SecondColumn, th.FirstColumn {
+    vertical-align: top;
+    text-align: left;
+}
+
+.CenterData {
+    vertical-align: top;
+    text-align: center;
+}
+
+table, tr, th {
+    border: 0 solid black;
+    border-bottom: 0 solid black;
+}
+
+td {
+    border-bottom: 0 solid black;
+}
+
+.full {
+    border: 0 black;
+    width: 100%;
+}
+
+.redline {
+    color: #af272f;
+    line-height: 4px;
+}

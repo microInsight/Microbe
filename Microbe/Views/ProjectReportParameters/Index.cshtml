@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Microbe.Models.ReportModels.ProjectReportParameters>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClientProjectReportsID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SpecialLabel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MinimumRange)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaximumRange)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GraphsPerPage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataFilter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SpecialNote)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.createDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.modifiedDate)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientProjectReportsID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialLabel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinimumRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaximumRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphsPerPage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFilter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modifiedDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
