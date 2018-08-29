@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Microbe.Models.ReportModels.NGS_Report>
+
+    @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.htmlLine)
+        </td>
+    </tr>
+        }

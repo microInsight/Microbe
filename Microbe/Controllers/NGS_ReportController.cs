@@ -23,27 +23,28 @@ namespace Microbe.Controllers
 
         // GET: NGS_Report
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            _context.Database.ExecuteSqlCommand("usp_GenerateNGS '124PF'");
+            var NGS_Report = from b in _context.NGS_Report
+                                select b;
+
+            if (searchString == null)
+            {
+                NGS_Report = NGS_Report.Where(s => s.ProjectID == "");
+            }
+            else
+            {
+                NGS_Report = NGS_Report.Where(s => s.ProjectID.Contains(searchString));
+            }
+            NGS_Report = NGS_Report.OrderBy(s => s.NGS_ReportID);
 
 
+            if (NGS_Report == null)
+            {
+                return NotFound();
+            }
+            return View(await NGS_Report.AsNoTracking().ToListAsync());
 
-
-            //add any parameters the stored procedure might require
-
-
-
-            var nGS_Report =  _context.Database.ExecuteSqlCommand("usp_GenerateNGS '124PF'");
-            return View();
-
-
-
-            //NGS_ViewModel model = new NGS_ViewModel();
-            //model.Items = new List<NGS_Report>();
-           
-
-           // Return View(model);
         }
 
         // GET: NGS_Report/Details/5

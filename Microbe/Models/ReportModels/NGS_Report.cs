@@ -14,6 +14,7 @@ namespace Microbe.Models.ReportModels
     public class NGS_Report
     {
         [Key]
+        public int NGS_ReportID { get; set; }
         public string ProjectID { get; set; }
         public string htmlLine { get; set; }
     }
