@@ -3,58 +3,71 @@
 @{
     ViewData["Title"] = "Details";
 }
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<br />
+<br />
+<br />
+<br />
+@if (SignInManager.IsSignedIn(User))
+{
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>LIMS_Client</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DisplayName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DisplayName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CompanyName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ClientNotes)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ClientNotes)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.active)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.active)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.primaryinvname)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.primaryinvname)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.secondaryinvname)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.secondaryinvname)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DateAdded)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DateAdded)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ClientID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <h4>LIMS_Client</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DisplayName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DisplayName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CompanyName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ClientNotes)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ClientNotes)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.active)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.active)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.primaryinvname)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.primaryinvname)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.secondaryinvname)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.secondaryinvname)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DateAdded)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ClientID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+}
+else
+{
+    <h2>Please Login to continue</h2>
+}

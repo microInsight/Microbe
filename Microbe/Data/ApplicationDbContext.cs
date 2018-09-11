@@ -48,6 +48,8 @@ namespace Microbe.Data
 
         public DbSet<Microbe.Models.ReportModels.ReportSectionFigures> ReportSectionFigures { get; set; }
 
+        public DbSet<Microbe.Models.ReportModels.ReportTitlePage> ReportTitlePages { get; set; }
+
         public DbSet<Microbe.Models.ReportModels.NGS_Report> NGS_Report { get; set; }
     }
 }

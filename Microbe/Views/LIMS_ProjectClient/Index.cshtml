@@ -3,15 +3,23 @@
 @{
     ViewData["Title"] = "Index";
 }
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<br />
+<br />
+<br />
+<br />
+@if (SignInManager.IsSignedIn(User))
+{
 
-<h2>Index</h2>
+    <h2>Index</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.ProjectID)
                 </th>
@@ -93,99 +101,105 @@
                 <th>
                     @Html.DisplayNameFor(model => model.ClientIndex)
                 </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                <a asp-controller="NGS_Report" asp-action="Index" asp-route-id="@item.ProjectID" uiactions="redo"> @Html.DisplayFor(modelItem => item.ProjectID)</a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BranchID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sort)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_Address1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_Address2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_Address3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_StateOrProvince)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_PostalCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_CountryRegion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_Fax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch_Notes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Dept)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_PhoneExt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Fax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Method)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact_Notes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.active)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastChangeBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastChangeDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastChangeType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClientIndex)
-            </td>
-            <td>
-                <!--<a asp-action="Edit" asp-route-id="@item.ProjectClientID">Edit</a> |-->
-                <a asp-action="Details" asp-route-id="@item.ProjectClientID">Details</a>
-                <!-- | <a asp-action="Delete" asp-route-id="@item.ProjectClientID">Delete</a>-->
-            </td>
-        </tr>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="NGS_Report" asp-action="Index" asp-route-id="@item.ProjectID" uiactions="redo"> @Html.DisplayFor(modelItem => item.ProjectID)</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BranchID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sort)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_Address1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_Address2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_Address3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_StateOrProvince)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_PostalCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_CountryRegion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_Fax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch_Notes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_Dept)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_PhoneExt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_Fax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_Method)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact_Notes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.active)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastChangeBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastChangeDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastChangeType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientIndex)
+                    </td>
+                    <td>
+                        <!--<a asp-action="Edit" asp-route-id="@item.ProjectClientID">Edit</a> |-->
+                        <a asp-action="Details" asp-route-id="@item.ProjectClientID">Details</a>
+                        <!-- | <a asp-action="Delete" asp-route-id="@item.ProjectClientID">Delete</a>-->
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
-    </tbody>
-</table>
+else
+{
+    <h2>Please Login to continue</h2>
+}

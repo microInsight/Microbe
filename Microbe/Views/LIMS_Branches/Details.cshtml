@@ -4,123 +4,136 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<br />
+<br />
+<br />
+<br />
+@if (SignInManager.IsSignedIn(User))
+{
+    <h2>Details</h2>
 
-<div>
-    <h4>LIMS_Branches</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ClientID)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ClientID)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Abbr)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Abbr)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Branch_Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Branch_Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Branch_Display)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Branch_Display)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Branch_Type)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Branch_Type)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Address_1)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Address_1)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Address_2)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Address_2)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Address_3)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Address_3)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.City)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.StateOrProvince)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.StateOrProvince)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.PostalCode)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PostalCode)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CountryRegion)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CountryRegion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Fax)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Fax)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.active)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.active)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.EDD)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.EDD)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DateAdded)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DateAdded)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.BranchID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <h4>LIMS_Branches</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ClientID)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ClientID)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Abbr)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Abbr)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Branch_Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Branch_Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Branch_Display)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Branch_Display)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Branch_Type)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Branch_Type)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address_1)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Address_1)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address_2)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Address_2)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address_3)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Address_3)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.StateOrProvince)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StateOrProvince)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PostalCode)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PostalCode)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CountryRegion)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CountryRegion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Fax)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Fax)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Notes)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Notes)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.active)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.active)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EDD)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EDD)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DateAdded)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.BranchID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+}
+Else
+{
+<h2>Please Login to continue</h2>
+}

@@ -10,22 +10,22 @@ using Microbe.Models.ReportModels;
 
 namespace Microbe.Controllers
 {
-    public class reportTitlePagesController : Controller
+    public class ReportTitlePageController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public reportTitlePagesController(ApplicationDbContext context)
+        public ReportTitlePageController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: reportTitlePages
+        // GET: ReportTitlePage
         public async Task<IActionResult> Index()
         {
             return View(await _context.ReportTitlePages.ToListAsync());
         }
 
-        // GET: reportTitlePages/Details/5
+        // GET: ReportTitlePage/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace Microbe.Controllers
                 return NotFound();
             }
 
-            var reportTitlePages = await _context.ReportTitlePages
+            var ReportTitlePage = await _context.ReportTitlePages
                 .SingleOrDefaultAsync(m => m.ReportTitlePageID == id);
-            if (reportTitlePages == null)
+            if (ReportTitlePage == null)
             {
                 return NotFound();
             }
 
-            return View(reportTitlePages);
+            return View(ReportTitlePage);
         }
 
-        // GET: reportTitlePages/Create
+        // GET: ReportTitlePage/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: reportTitlePages/Create
+        // POST: ReportTitlePage/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReportTitlePageID,ReportDefinitionID,SectionOrder,SectionTitle,SectionDesc,ModifiedBy,createDate,modifiedDate")] ReportTitlePage reportTitlePage)
+        public async Task<IActionResult> Create([Bind("ReportTitlePageID,ReportDefinitionID,SectionOrder,SectionTitle,SectionDesc,ModifiedBy,createDate,modifiedDate")] ReportTitlePage ReportTitlePage)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(reportTitlePage);
+                _context.Add(ReportTitlePage);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(reportTitlePage);
+            return View(ReportTitlePage);
         }
 
-        // GET: reportTitlePages/Edit/5
+        // GET: ReportTitlePage/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace Microbe.Controllers
                 return NotFound();
             }
 
-            var reportTitlePages = await _context.ReportTitlePages.SingleOrDefaultAsync(m => m.ReportTitlePageID == id);
-            if (reportTitlePages == null)
+            var ReportTitlePage = await _context.ReportTitlePages.SingleOrDefaultAsync(m => m.ReportTitlePageID == id);
+            if (ReportTitlePage == null)
             {
                 return NotFound();
             }
-            return View(reportTitlePages);
+            return View(ReportTitlePage);
         }
 
-        // POST: reportTitlePages/Edit/5
+        // POST: ReportTitlePage/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ReportTitlePageID,ReportDefinitionID,SectionOrder,SectionTitle,SectionDesc,ModifiedBy,createDate,modifiedDate")] ReportTitlePage reportTitlePages)
+        public async Task<IActionResult> Edit(int id, [Bind("ReportTitlePageID,ReportDefinitionID,SectionOrder,SectionTitle,SectionDesc,ModifiedBy,createDate,modifiedDate")] ReportTitlePage ReportTitlePage)
         {
-            if (id != reportTitlePages.ReportTitlePageID)
+            if (id != ReportTitlePage.ReportTitlePageID)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Microbe.Controllers
             {
                 try
                 {
-                    _context.Update(reportTitlePages);
+                    _context.Update(ReportTitlePage);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!reportTitlePagesExists(reportTitlePages.ReportTitlePageID))
+                    if (!ReportTitlePageExists(ReportTitlePage.ReportTitlePageID))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace Microbe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(reportTitlePages);
+            return View(ReportTitlePage);
         }
 
-        // GET: reportTitlePages/Delete/5
+        // GET: ReportTitlePage/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,28 +124,28 @@ namespace Microbe.Controllers
                 return NotFound();
             }
 
-            var reportTitlePages = await _context.ReportTitlePages
+            var ReportTitlePage = await _context.ReportTitlePages
                 .SingleOrDefaultAsync(m => m.ReportTitlePageID == id);
-            if (reportTitlePages == null)
+            if (ReportTitlePage == null)
             {
                 return NotFound();
             }
 
-            return View(reportTitlePages);
+            return View(ReportTitlePage);
         }
 
-        // POST: reportTitlePages/Delete/5
+        // POST: ReportTitlePage/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var reportTitlePages = await _context.ReportTitlePages.SingleOrDefaultAsync(m => m.ReportTitlePageID == id);
-            _context.ReportTitlePages.Remove(reportTitlePages);
+            var ReportTitlePage = await _context.ReportTitlePages.SingleOrDefaultAsync(m => m.ReportTitlePageID == id);
+            _context.ReportTitlePages.Remove(ReportTitlePage);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool reportTitlePagesExists(int id)
+        private bool ReportTitlePageExists(int id)
         {
             return _context.ReportTitlePages.Any(e => e.ReportTitlePageID == id);
         }

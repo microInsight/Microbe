@@ -1,36 +1,41 @@
-﻿
-<br />
-<br />
-
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 <br />
 <br />
-
+<br />
+<br />
 <h2>Welcome to the  Microbial Insights Data and Analytics website!</h2>
-Please login to continue
+@if (SignInManager.IsSignedIn(User))
+{
+    <Table>
+        <tr>
+            <td align="right">
+                <form asp-controller="LIMS_Client" asp-action="Index">
+                    <p>
+                        Search for Client: <input type="text" name="SearchString">
+                        <input type="submit" value="Filter" />
+                    </p>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <form asp-controller="NGS_Report" asp-action="Index">
+                    <p>
+                        Search for Report: <input type="text" name="SearchString">
+                        <input type="submit" value="Filter" />
+                    </p>
+                </form>
+            </td>
+        </tr>
+    </Table>
+}
+else
+{
+    <H2>Please Login to continue...</H2>
 
-<Table>
-    <tr>
-        <td align="right">
-            <form asp-controller="LIMS_Client" asp-action="Index">
-                <p>
-                    Search for Client: <input type="text" name="SearchString">
-                    <input type="submit" value="Filter" />
-                </p>
-            </form>
-        </td>
-    </tr>
-    <tr>
-        <td align="right">
-            <form asp-controller="NGS_Report" asp-action="Index">
-                <p>
-                    Search for Report: <input type="text" name="SearchString">
-                    <input type="submit" value="Filter" />
-                </p>
-            </form>
-        </td>
-    </tr>
-</Table>
+}

@@ -72,7 +72,7 @@ namespace Microbe.Controllers
         }
 
         // POST: NGS_Report/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overp osting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
