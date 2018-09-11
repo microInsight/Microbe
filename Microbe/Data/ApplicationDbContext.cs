@@ -51,5 +51,20 @@ namespace Microbe.Data
         public DbSet<Microbe.Models.ReportModels.ReportTitlePage> ReportTitlePages { get; set; }
 
         public DbSet<Microbe.Models.ReportModels.NGS_Report> NGS_Report { get; set; }
+
+        public DbSet<Microbe.Models.NGSReportParts.NGS_GenClassificationResultsTable> NGS_GenClassificationResultsTables { get; set; }
+
+        public DbSet<Microbe.Models.NGSReportParts.NGS_ClassificationResults> NGS_ClassificationResults { get; set; }
+
+        public DbSet<Microbe.Models.NGSReportParts.NGS_SampleAggregate> NGS_SampleAggregates { get; set; }
+
+        public DbSet<Microbe.Models.NGSReportParts.NGS_TTLPhylumClassificationResults> NGS_TTLPhylumClassificationResults { get; set; }
+
+        public DbSet<Microbe.Models.NGSReportParts.NGS_Statistics> NGS_Statistics { get; set; }
+
+        public DbSet<Microbe.Models.NGSReportParts.NGS_SampleHits> NGS_SampleHits { get; set; }
+
+
+
     }
 }
