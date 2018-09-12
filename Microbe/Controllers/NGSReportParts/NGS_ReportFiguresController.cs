@@ -10,11 +10,11 @@ using Microbe.Models.NGSReportParts;
 
 namespace Microbe.Controllers.NGSReportParts
 {
-    public class NGS_TTLPhylumClassificationResultsController : Controller
+    public class NGS_ReportFiguresController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public NGS_TTLPhylumClassificationResultsController(ApplicationDbContext context)
+        public NGS_ReportFiguresController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -22,28 +22,25 @@ namespace Microbe.Controllers.NGSReportParts
         // GET: NGS_
         public async Task<IActionResult> Index(string sampleName, string ProjectID)
         {
-            var ClassResults = from b in _context.NGS_TTLPhylumClassificationResults
-
-                               select b;
+            var ClassResults = from b in _context.NGS_ReportFigures
+                          
+                              select b;
 
             if (!String.IsNullOrEmpty(sampleName))
             {
-                ClassResults = ClassResults.Where(s => s.sampleName == sampleName);
+                ClassResults = ClassResults.Where(s => s.SampleName == sampleName);
             }
             if (!String.IsNullOrEmpty(ProjectID))
             {
                 ClassResults = ClassResults.Where(m => m.ProjectID == ProjectID);
             }
 
-            ClassResults = ClassResults.OrderByDescending(s => s.numHits);
-
-
             if (ClassResults == null)
             {
                 return NotFound();
             }
             return View(await ClassResults.AsNoTracking().Take(50).ToListAsync());
-
+            
         }
         // GET: ClassResults/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -53,8 +50,8 @@ namespace Microbe.Controllers.NGSReportParts
                 return NotFound();
             }
 
-            var ClassResults = await _context.NGS_GenClassificationResults
-                .SingleOrDefaultAsync(m => m.GenClassificationResultsTableID == id);
+            var ClassResults = await _context.NGS_ReportFigures
+                .SingleOrDefaultAsync(m => m.NGS_ReportFiguresID == id);
             if (ClassResults == null)
             {
                 return NotFound();

@@ -54,7 +54,7 @@ namespace Microbe.Data
 
         public DbSet<Microbe.Models.NGSReportParts.NGS_GenClassificationResults> NGS_GenClassificationResults { get; set; }
 
-        public DbSet<Microbe.Models.NGSReportParts.NGS_ClassificationResults> NGS_ClassificationResults { get; set; }
+        public DbSet<Microbe.Models.NGSReportParts.NGS_ReportFigures> NGS_ReportFigures { get; set; }
 
         public DbSet<Microbe.Models.NGSReportParts.NGS_SampleAggregate> NGS_SampleAggregates { get; set; }
 
