@@ -1,0 +1,23 @@
+﻿@model Microbe.Models.NGSReportParts.NGS_SampleAggregate
+
+
+<h3>Results for Sample</h3>
+<table><tr><td class="FirstLabel">Table 6:</td><td class="FirstColumn">Sequencing Statistics for Sample</td></tr></table>
+<table class="full">
+    <thead>
+        <tr class="RedBackLabelBottom">
+            <td>Total Reads</td>
+            <td>Reads Passing Quality Filtering</td>
+            <td>% Reads Passing Quality Filtering </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="FirstColumn">@Html.DisplayFor(model => model.ClusterCnt)</td>
+            <td class="CenterData">@Html.DisplayFor(model => model.ClusterCntPF)</td>
+            <td class="CenterData">@Html.DisplayFor(model => model.ClassificationRate)</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />

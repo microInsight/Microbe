@@ -1,10 +1,19 @@
-﻿@model IEnumerable<Microbe.Models.ReportModels.NGS_Report>
-
-    @foreach (var item in Model)
+﻿@model IEnumerable<Microbe.Models.NGSReportParts.NGS_GenClassificationResults>
+<h3></h3><!--Table 4 Top Genus Classification Results -->
+<table><tr><td class="FirstLabel">Table 4:</td><td class="FirstColumn">Top genera classification results  for sample. Additional identified genera are included in the accompanying Excel data file.</td></tr></table>
+<table class="full">
+    <tr class="RedBackLabelBottom"><td width="25%">Classification</td><td width="13%">Number of Reads</td><td width="12%">% Total Reads</td><td>Description</td></tr>
+    <tr><td class="FirstColumn">Bacteroides</td><td class="CenterData">92,415</td><td class="CenterData">9.4%</td><td>Anaerobic genus of saccharolytic (utilizing carbohydrates) chemoorganotrophs.  Acetic and succinic acid are the main fermentation products. Bacteroides are commonly found in mammalian intestinal tracts.</td></tr>
+    <tbody>
+        @foreach (var item in Model)
         {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.htmlLine)
-        </td>
-    </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Genus)</td>
+                <td>@Html.DisplayFor(modelItem => item.numHits)</td>
+                <td>@Html.DisplayFor(modelItem => item.percentHits)</td>
+                <td>@Html.DisplayFor(modelItem => item.GenusDescription)</td>
+            </tr>
         }
+    </tbody>
+</table>
+<p>Note: The ”Other” category in this pie chart is the sum of all classifications with less than 3.50</p>

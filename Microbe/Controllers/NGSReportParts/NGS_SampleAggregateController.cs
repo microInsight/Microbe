@@ -46,15 +46,15 @@ namespace Microbe.Controllers.NGSReportParts
 
         }
         // GET: ClassResults/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string sampleName)
         {
-            if (id == null)
+            if (sampleName == null)
             {
                 return NotFound();
             }
 
-            var ClassResults = await _context.NGS_GenClassificationResultsTables
-                .SingleOrDefaultAsync(m => m.GenClassificationResultsTableID == id);
+            var ClassResults = await _context.NGS_SampleAggregates
+                .SingleOrDefaultAsync(m => m.SampleName == sampleName);
             if (ClassResults == null)
             {
                 return NotFound();

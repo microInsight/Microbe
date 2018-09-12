@@ -52,7 +52,7 @@ namespace Microbe.Data
 
         public DbSet<Microbe.Models.ReportModels.NGS_Report> NGS_Report { get; set; }
 
-        public DbSet<Microbe.Models.NGSReportParts.NGS_GenClassificationResultsTable> NGS_GenClassificationResultsTables { get; set; }
+        public DbSet<Microbe.Models.NGSReportParts.NGS_GenClassificationResults> NGS_GenClassificationResults { get; set; }
 
         public DbSet<Microbe.Models.NGSReportParts.NGS_ClassificationResults> NGS_ClassificationResults { get; set; }
 

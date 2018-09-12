@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Microbe.Models.NGSReportParts.NGS_GenClassificationResults>
+
+
+<h3></h3><!--Table 4 Top Genus Classification Results -->
+<table><tr><td class="FirstLabel">Table 4:</td><td class="FirstColumn">Top genera classification results  for sample T5-D3-0618. Additional identified genera are included in the accompanying Excel data file.</td></tr></table>
+<table class="full">
+    <thead>
+        <tr class="RedBackLabelBottom">
+            <td width="25%">Classification</td>
+            <td width="13%">Number of Reads</td>
+            <td width="12%">% Total Reads</td>
+            <td>Description</td>
+        </tr>
+     </thead>
+     <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <!--<td>
+                        @Html.DisplayFor(modelItem => item.Genus)
+                    </td>-->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.numHits)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.percentHits)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GenusDescription)
+                    </td>
+                </tr>
+        }
+    </tbody>
+    </table>

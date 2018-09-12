@@ -37,5 +37,13 @@ namespace Microbe.Models.NGSReportParts
         public int TtlGenera { get; set; }
         public float TtlEubacteria { get; set; }
         public string ClientSampleID { get; set; }
+        public string dateSampled { get; set; }
+        public string SpeciesPct { get; set; }
+        public string kingdomPct { get; set; }
+        public string GenusPct { get; set; }
+        public string FamilyPct { get; set; }
+        public string OrderPct { get; set; }
+        public string ClassPct { get; set; }
+        public string PhylumPct { get; set; }
     }
 }

@@ -1,0 +1,84 @@
+﻿@model Microbe.Models.ReportModels.ReportTitlePage
+
+@{
+    ViewData["Title"] = "NGS Report";
+}
+
+<h1>Site Logic Report</h1>
+<hr class="redline" />
+<h2><i>@Html.DisplayFor(model => model.ReportTitle)</i></h2>
+<table class="full" cellspacing="20">
+    <tr><td class="FirstLabel">Contact:</td><td class="FirstColumn">@Html.DisplayFor(model => model.ContactName)</td>
+        <td></td>
+        <td class="SecondLabel">Phone:</td><td class="SecondColumn">@Html.DisplayFor(model => model.ContactPhone)</td>
+    </tr>
+    <tr>
+        <td class="FirstLabel">Address:</td><td class="FirstColumn">@Html.DisplayFor(model => model.AddressLine1)<BR />@Html.DisplayFor(model => model.AddressLine2)<BR />@Html.DisplayFor(model => model.AddressLine3)<BR />@Html.DisplayFor(model => model.AddressLine4)<BR />@Html.DisplayFor(model => model.AddressLine5)</td>
+        <td></td>
+        <td class="SecondLabel">Email:</td><td class="SecondColumn">@Html.DisplayFor(model => model.ContactEmail)</td></tr>
+</table>
+<table class="full">
+    <tr>
+        <td width="50%"><table class="full"><tr class="RedBackLabel"><td>MI Identifier:</td><td class="CenterData">@Html.DisplayFor(model => model.ProjectID)</td></tr></table></td>
+        <td class="SecondLabel" width="10%">Report Date:</td>
+        <td class="SecondColumn">@Html.DisplayFor(model => model.ReportDate)</td>
+    </tr>
+</table>
+<table class="full">
+    <tr><td class="FirstLabel" width="20%">Project:</td><td></td><td class="FirstColumn">@Html.DisplayFor(model => model.ProjectText)</td></tr>
+    <tr><td class="FirstLabel" width="20%">Comments:</td><td></td><td class="FirstColumn">@Html.DisplayFor(model => model.ReportComments)</td></tr>
+</table>
+
+
+<div>
+    <h4>ReportSections</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportDefinitionID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContactName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SectionOrder)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SectionOrder)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SectionTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SectionTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SectionDesc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SectionDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.createDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.createDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.modifiedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.modifiedDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ReportSectionID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

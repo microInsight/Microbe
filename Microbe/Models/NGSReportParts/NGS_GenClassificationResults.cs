@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Microbe.Models.NGSReportParts
 {
-    public class NGS_GenClassificationResultsTable
+    public class NGS_GenClassificationResults
+    
     {
         [Key]
         public int GenClassificationResultsTableID { get; set; }

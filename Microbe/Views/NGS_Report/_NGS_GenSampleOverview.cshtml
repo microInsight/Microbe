@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Microbe.Models.NGSReportParts.NGS_SampleAggregate>
+
+    <h3></h3>
+    <table><tr><td class="FirstLabel"></td><td class="FirstColumn"></td></tr></table>
+    <table class="full">
+        <tr class="RedBackLabelBottom"><th></th><th></th><th></th><th></th><th></th></tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="FirstColumn">@Html.DisplayFor(modelItem => item.MI_Identitfier)</td>
+                <td class="CenterData">@Html.DisplayFor(modelItem => item.SampleName)</td>
+                <td class="CenterData">@Html.DisplayFor(modelItem => item.dateSampled)</td>
+                <td class="CenterData">@Html.DisplayFor(modelItem => item.ClusterCntPF)</td>
+                <td class="CenterData">@Html.DisplayFor(modelItem => item.ClassificationRate)</td>
+            </tr>
+        }
+    </table><br /><br />

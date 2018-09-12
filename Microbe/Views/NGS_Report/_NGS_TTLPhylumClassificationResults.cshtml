@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Microbe.Models.NGSReportParts.NGS_TTLPhylumClassificationResults>
+
+<h3>Sample Classification Results by Taxonomic Level</h3>
+<table><tr><td class="FirstLabel">Table 5:</td><td class="FirstColumn">Top phyla classification results for Sample. Additional identified phyla included in accompanying Excel data file</td></tr></table>
+<table class="full">
+    <tr class="RedBackLabelBottom">
+        <td>Classification</td>
+        <td>Number of Reads </td>
+        <td>% Total Reads</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="FirstColumn">@Html.DisplayFor(modelItem => item.Phylum)</td>
+            <td class="CenterData">@Html.DisplayFor(modelItem => item.fmtHits)</td>
+            <td class="CenterData">@Html.DisplayFor(modelItem => item.hitPercent)</td>
+        </tr>
+    }
+</table><br /><br />

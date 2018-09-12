@@ -1,0 +1,26 @@
+﻿@model Microbe.Models.NGSReportParts.NGS_SampleAggregate
+
+<table><tr><td class="FirstLabel">Table 6:</td><td class="FirstColumn">Classification Rate Summary for @Html.DisplayFor(model => model.SampleName)</td></tr></table>
+<table class="full">
+    <tr class="RedBackLabelBottom"><td>Taxonomic Level</td><td>Reads Related to Taxonomic Level</td><td>% Total Reads Classified to Taxonomic Level</td></tr>
+
+    <table class="full">
+        <thead>
+            <tr class="RedBackLabelBottom">
+                <td>Total Reads</td>
+                <td>Reads Passing Quality Filtering</td>
+                <td>% Reads Passing Quality Filtering </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="FirstColumn">Species</td><td class="CenterData">@Html.DisplayFor(model => model.SpeciesCnt)</td><td class="CenterData">@Html.DisplayFor(model => model.SpeciesPct)</td></tr>
+            <tr><td class="FirstColumn">Genus  </td><td class="CenterData">@Html.DisplayFor(model => model.GenusCnt)</td><td class="CenterData">@Html.DisplayFor(model => model.GenusPct)</td></tr>
+            <tr><td class="FirstColumn">Family </td><td class="CenterData">@Html.DisplayFor(model => model.FamilyCnt)</td><td class="CenterData">@Html.DisplayFor(model => model.FamilyPct)</td></tr>
+            <tr><td class="FirstColumn">Order  </td><td class="CenterData">@Html.DisplayFor(model => model.OrderCnt)</td><td class="CenterData">@Html.DisplayFor(model => model.OrderPct)</td></tr>
+            <tr><td class="FirstColumn">Class  </td><td class="CenterData">@Html.DisplayFor(model => model.ClassCnt)</td><td class="CenterData">@Html.DisplayFor(model => model.ClassPct)</td></tr>
+            <tr><td class="FirstColumn">Phylum </td><td class="CenterData">@Html.DisplayFor(model => model.PhylumCnt)</td><td class="CenterData">@Html.DisplayFor(model => model.PhylumPct)</td></tr>
+            <tr><td class="FirstColumn">Kingdom</td><td class="CenterData">@Html.DisplayFor(model => model.KingdomCnt)</td><td class="CenterData">@Html.DisplayFor(model => model.kingdomPct)</td></tr>
+        </tbody>
+    </table>
+    <br />
+    <br />

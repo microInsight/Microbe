@@ -22,7 +22,7 @@ namespace Microbe.Controllers.NGSReportParts
         // GET: NGS_
         public async Task<IActionResult> Index(string sampleName, string ProjectID)
         {
-            var ClassResults = from b in _context.NGS_GenClassificationResultsTables
+            var ClassResults = from b in _context.NGS_GenClassificationResults
                           
                               select b;
 
@@ -53,7 +53,7 @@ namespace Microbe.Controllers.NGSReportParts
                 return NotFound();
             }
 
-            var ClassResults = await _context.NGS_GenClassificationResultsTables
+            var ClassResults = await _context.NGS_GenClassificationResults
                 .SingleOrDefaultAsync(m => m.GenClassificationResultsTableID == id);
             if (ClassResults == null)
             {

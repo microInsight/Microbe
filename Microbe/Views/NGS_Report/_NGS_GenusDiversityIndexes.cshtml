@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Microbe.Models.NGSReportParts.NGS_SampleAggregate>
+
+
+<table><tr><td class="FirstLabel">Table 6:</td><td class="FirstColumn">Genus diversity indices for 124PF. Please refer to the Interpretation section for m</td></tr></table>
+    <table class="full">
+        <thead>
+            <tr class="RedBackLabelBottom">
+                <th>MI&nbsp;Identifier</th>
+                <th>Sample Name</th>
+                <th>Shannon</th>
+                <th>Simpson</th>
+                <th>Chao1 Predicted Genera</th>
+                <th>Total Genera Observed</th>
+                <th>Total Eubacteria (cells/mL)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.MI_Identitfier)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ClientSampleID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Shannon)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Simpson)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ChaolPredicted)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TtlGenera)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TtlEubacteria)</td>
+                </tr>
+            }
+        </tbody>
+</table><br /><br />
