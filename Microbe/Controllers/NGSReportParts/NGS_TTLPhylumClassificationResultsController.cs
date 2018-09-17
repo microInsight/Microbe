@@ -20,7 +20,7 @@ namespace Microbe.Controllers.NGSReportParts
         }
 
         // GET: NGS_
-        public async Task<IActionResult> Index(string sampleName, string ProjectID)
+        public ActionResult Index(string sampleName, string ProjectID)
         {
             var ClassResults = from b in _context.NGS_TTLPhylumClassificationResults
 
@@ -42,25 +42,25 @@ namespace Microbe.Controllers.NGSReportParts
             {
                 return NotFound();
             }
-            return View(await ClassResults.AsNoTracking().Take(50).ToListAsync());
+            return PartialView(ClassResults.AsNoTracking().Take(50).ToListAsync());
 
         }
         // GET: ClassResults/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var ClassResults = await _context.NGS_GenClassificationResults
+            var ClassResults = _context.NGS_GenClassificationResults
                 .SingleOrDefaultAsync(m => m.GenClassificationResultsTableID == id);
             if (ClassResults == null)
             {
                 return NotFound();
             }
 
-            return View(ClassResults);
+            return PartialView(ClassResults);
         }
     }
 }

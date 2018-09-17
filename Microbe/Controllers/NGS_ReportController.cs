@@ -9,6 +9,9 @@ using Microbe.Data;
 using Microbe.Models.ReportModels;
 using System.Data.SqlClient;
 using System.Data;
+using System.Net;
+using System.Collections.Specialized;
+using System.IO;
 
 namespace Microbe.Controllers
 {
@@ -28,13 +31,15 @@ namespace Microbe.Controllers
             var NGS_Report = from b in _context.NGS_Report
                                 select b;
 
+            
+
             if (searchString == null)
             {
                 NGS_Report = NGS_Report.Where(s => s.ProjectID == "");
             }
             else
             {
-                NGS_Report = NGS_Report.Where(s => s.ProjectID.Contains(searchString));
+                NGS_Report = NGS_Report.Where(s => s.ProjectID==searchString);
             }
             NGS_Report = NGS_Report.OrderBy(s => s.NGS_ReportID);
 

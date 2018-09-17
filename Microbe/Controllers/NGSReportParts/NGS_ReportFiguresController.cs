@@ -20,7 +20,7 @@ namespace Microbe.Controllers.NGSReportParts
         }
 
         // GET: NGS_
-        public async Task<IActionResult> Index(string sampleName, string ProjectID)
+        public async Task<IActionResult> Index(string sampleName, string ProjectID, string FigureType)
         {
             var ClassResults = from b in _context.NGS_ReportFigures
                           
@@ -33,6 +33,10 @@ namespace Microbe.Controllers.NGSReportParts
             if (!String.IsNullOrEmpty(ProjectID))
             {
                 ClassResults = ClassResults.Where(m => m.ProjectID == ProjectID);
+            }
+            if (!String.IsNullOrEmpty(FigureType))
+            {
+                ClassResults = ClassResults.Where(m => m.FigureType == FigureType);
             }
 
             if (ClassResults == null)

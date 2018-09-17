@@ -1,6 +1,7 @@
-﻿@model IEnumerable<Microbe.Models.ReportModels.NGS_Report>
+﻿@model Microbe.Models.ReportModels.NGS_Report   
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+
 <br />
 <br />
 <br />
@@ -15,26 +16,12 @@
         <link rel="stylesheet" href="/css/ReportPrint.css">
     </head>
     <body>
-        <div class="copyright">NOTICE: This report is intended only for the addressee shown above and may contain conﬁdential or privileged information. If the recipient of this material is not the intended recipient or if you have received this in error, please notify Microbial Insights, Inc. immediately. The data and other information in this report represent only the sample(s) analyzed and are rendered upon condition that it is not to be reproduced without approval from Microbial Insights, Inc. Thank you for your cooperation.</div>
-        <div id="footer">
-            <table class="full">
-                <tr>
-                    <td></td>
-                    <td>10515 Research Drive<br />Knoxville, TN 37922<br />Phone: 865.573.8188<br />Fax: 865.573.8133<br />Web: www.microbe.com</td>
-                </tr>
-            </table>
-        </div>
+        @Html.Partial("~/Views/Shared/_Copyright.html")
         <div id="header"><table class="full"><tr><td width="30%"><img src="images/MI logo.jpg" height="100"></td><td>10515 Research Drive<br />Knoxville, TN 37922<br />Phone: 865.573.8188<br />Fax: 865.573.8133<br />Web: www.microbe.com</td></tr></table><hr /></div>
+        @await Html.PartialAsync("/Views/NGS_Report/_PartialTest.cshtml")
+        <partial name="_NGS_TTLPhylumClassificationResults.cshtml" />
 
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayNameFor(modelItem => item.htmlLine)
-                </td>
-            </tr>
-        }
+        @await Html.PartialAsync("_NGS_TTLPhylumClassificationResults.cshtml", Model.ProjectID)
 
 
 

@@ -18,5 +18,7 @@ namespace Microbe.Models.NGSReportParts
         public string imageLocation { get; set; }
         public string FigureTitle { get; set; }
         public string FigureText { get; set; }
+        public string ImageWidth { get; set; }
+        public string ImageHeight { get; set; }
     }
 }
