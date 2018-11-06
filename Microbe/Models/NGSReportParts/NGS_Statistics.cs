@@ -11,7 +11,7 @@ namespace Microbe.Models.NGSReportParts
         [Key]
         public int NGS_StatisticsID { get; set; }
         public string SourceFile { get; set; }
-        public string MIID { get; set; }
+        public string ProjectID { get; set; }
         public string SampleName { get; set; }
         public string Kingdom { get; set; }
         public string Phylum { get; set; }

@@ -32,7 +32,7 @@ namespace Microbe.Controllers.NGSReportParts
             }
             if (!String.IsNullOrEmpty(ProjectID))
             {
-                ClassResults = ClassResults.Where(m => m.MIID == ProjectID);
+                ClassResults = ClassResults.Where(m => m.ProjectID == ProjectID);
             }
 
             ClassResults = ClassResults.OrderByDescending(s => s.num_hits);
