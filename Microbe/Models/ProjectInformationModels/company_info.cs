@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Microbe.Models.ProjectInformationModels
 {
     public class company_info
     {
+        [Key]
         public int cid { get; set; }
         public string company_name { get; set; }
         public string company_logo_app { get; set; }

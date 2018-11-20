@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Microbe.Models.ProjectInformationModels
 {
     public class LIMS_DataType
     {
+        [Key]
         public int dID { get; set; }
         public string datatype { get; set; }
         public string datatable { get; set; }

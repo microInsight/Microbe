@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Microbe.Models.ReportModels
 {
     public class ProjectReportMargins
     {
+        [Key]
         public int ProjectReportMarginsID { get; set; }
         public string ProjectID { get; set; }
         public float MarginRight { get; set; }
@@ -19,3 +21,4 @@ namespace Microbe.Models.ReportModels
         public string FirstPageHeaderTxt { get; set; }
     }
 }
+           

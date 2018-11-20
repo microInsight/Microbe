@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace Microbe.Models.ReportModels
 {
     public class EDD_QAData
     {
+        [Key]
         public int EDD_QADataID { get; set; }
         public string EDD_FileName { get; set; }
         public string EDD_Sheet { get; set; }
